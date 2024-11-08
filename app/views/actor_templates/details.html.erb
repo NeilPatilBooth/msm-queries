@@ -1,0 +1,28 @@
+<h1>Actor #<%= @the_actor.id %> details </h1>
+
+<a href="/directors">Go back</a>
+
+<hr>
+
+<dl>
+  <dt>Name</dt>
+  <dd><%= @the_actor.name%></dd>
+
+  <dt>Dob</dt>
+  <dd><%= @the_actor.dob%></dd>
+  
+  <dt>Bio</dt>
+  <dd><%= @the_actor.bio%></dd>
+
+  <dt>Image</dt>
+  <dd><img src ="<%= @the_actor.image%>" width="200"></dd>
+
+  <dt>Created at</dt>
+  <dd><%= @the_actor.created_at %></dd>
+
+  <dt> Updated at </dt>
+  <dd><%= @the_actor.updated_at %>
+</dl>
+
+
+<%= Character.where({ :actor_id => @the_actor.id })%>
