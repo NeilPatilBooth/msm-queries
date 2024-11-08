@@ -12,4 +12,11 @@ class DirectorsController < ApplicationController
 
     render({ :template => "director_templates/details"})
   end
+
+  def youngest
+    matching_youngest = Director.where.not({ :dob => nil }).order({ :dob => :asc })
+    @the_youngest_director = matching_youngest.at(0)
+
+    render({ :template =>"director_templates/youngest"})
+  end    
 end 
