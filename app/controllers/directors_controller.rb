@@ -4,7 +4,7 @@ class DirectorsController < ApplicationController
   end
 
   def show
-    the_id = params.fetch("the_id")
+    the_id = params.fetch("the_id") # Ask Ben -> why is this "the_id", where are we fetching "the_id" from? 
 
     matching_records = Director.where({ :id => the_id})
 
